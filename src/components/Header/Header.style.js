@@ -7,9 +7,13 @@ export const Header = styled.header`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
 `;
-export const Title = styled.h1`
-  color: #eee;
+export const Title = styled.h2`
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 500;
+  color: whitesmoke;
+  line-height: 1.2;
 `;
 export const Links = styled.div``;
 export const Navigate = styled(Link)`
@@ -17,8 +21,8 @@ export const Navigate = styled(Link)`
   margin: 0.2rem;
   border: 0;
   border-radius: 1rem;
-  color: grey;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+  font-family: 'Varela Round', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 1px;
