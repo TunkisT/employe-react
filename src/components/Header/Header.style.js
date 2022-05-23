@@ -1,15 +1,18 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  background: #eee;
+  background: #435d7d;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 `;
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  color: #eee;
+`;
 export const Links = styled.div``;
-export const Link = styled.a`
+export const Navigate = styled(Link)`
   background: pink;
   margin: 0.2rem;
   border: 0;
