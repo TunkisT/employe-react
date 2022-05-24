@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Button = styled.button`
   background: ${({ color }) => (color ? color : 'grey')};
   border: 0;
+  border-radius: 0.3rem;
   color: white;
   cursor: pointer;
   display: block;
@@ -11,6 +12,6 @@ export const Button = styled.button`
   font-weight: 400;
   letter-spacing: 1px;
   margin: 0 auto;
-  padding: 0.6rem 2rem;
+  padding: 0.6rem 3rem;
   text-transform: uppercase;
 `;

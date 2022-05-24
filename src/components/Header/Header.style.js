@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  background: #39ace7;
+  background: #baf;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -27,6 +27,7 @@ export const Navigate = styled(Link)`
   }
   background: #1fae51;
   border: 0;
+  border-radius: 0.3rem;
   color: white;
   font-size: 1rem;
   font-weight: 400;
