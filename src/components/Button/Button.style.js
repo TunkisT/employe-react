@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   background: ${({ color }) => (color ? color : 'grey')};
-  border: 0;
   border-radius: 0.3rem;
+  border: 0;
   color: white;
   cursor: pointer;
   display: block;

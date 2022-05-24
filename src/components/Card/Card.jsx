@@ -14,6 +14,8 @@ function Card({ data }) {
   );
 }
 
-Card.propTypes = {};
+Card.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default Card;
