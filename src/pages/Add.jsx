@@ -2,20 +2,23 @@ import React, { useState } from 'react';
 import Button from '../components/Button/Button';
 import Container from '../components/Container/Container';
 import Input from '../components/Input/Input';
+import Notification from '../components/Notification/Notification';
 
 function Add() {
-  const [userDetails, setUserDetails] = useState('');
+  const [userDetails, setUserDetails] = useState({
+    name: '',
+    surname: '',
+    email: '',
+    address: '',
+    phone: '',
+  });
+  const [errorData, setErrorData] = useState([]);
 
   function formHandler(e) {
     e.preventDefault();
-    console.log('userDetails ===', userDetails);
-    if (userDetails.length === 0) {
-      console.log('empty lines');
-      return;
-    }
     fetchData();
-    setUserDetails('');
   }
+  console.log('userDetails ===', userDetails.name);
 
   async function fetchData() {
     const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/add`, {
@@ -27,7 +30,17 @@ function Add() {
       body: JSON.stringify(userDetails),
     });
     const result = await res.json();
-    console.log('result ===', result);
+    if (result.success) {
+      if (result.data.affectedRows === 1) {
+        setErrorData([]);
+        alert('Employee successfully added!');
+      } else {
+        setErrorData([{ message: 'Something went wrong. Please try again' }]);
+      }
+    }
+    if (!result.success) {
+      setErrorData(result.error);
+    }
   }
 
   return (
@@ -40,7 +53,6 @@ function Add() {
           type='name'
           placeholder='name'
           handleChange={(name) => setUserDetails({ ...userDetails, name })}
-          value={'kkk'}
         />
         <Input
           name='surname'
@@ -74,6 +86,10 @@ function Add() {
           Add
         </Button>
       </form>
+      {errorData.length !== 0 &&
+        errorData.map((error) => (
+          <Notification key={error.message}>{error.message}</Notification>
+        ))}
     </Container>
   );
 }
