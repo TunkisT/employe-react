@@ -17,8 +17,9 @@ function Add() {
   function formHandler(e) {
     e.preventDefault();
     fetchData();
+    console.log('pushedd');
   }
-  console.log('userDetails ===', userDetails.name);
+  console.log('userDetails ===', userDetails);
 
   async function fetchData() {
     const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/add`, {
@@ -53,6 +54,7 @@ function Add() {
           type='name'
           placeholder='name'
           handleChange={(name) => setUserDetails({ ...userDetails, name })}
+          value={userDetails.name}
         />
         <Input
           name='surname'
