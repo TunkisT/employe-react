@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import * as S from './CardList.style';
 import Card from '../Card/Card';
 
-function CardList({ data }) {
+function CardList({ data, test }) {
   return (
     <S.CardList>
       {data.map((obj) => (
-        <Card key={obj.employee_id} data={obj} />
+        <Card key={obj.employee_id} data={obj} test={test} />
       ))}
     </S.CardList>
   );
