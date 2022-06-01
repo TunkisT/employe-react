@@ -1,4 +1,4 @@
-### Manage employees app client-side using REACT.js
+## Manage employees app client-side using REACT.js
 
 ## Idea:
 This project is for administrators whose can save company employees contacts.
